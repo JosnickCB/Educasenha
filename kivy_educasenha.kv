@@ -1,0 +1,997 @@
+WindowManager:
+    MainWindow:
+    PreMainWindow:
+    SecondWindow:
+    TestWindow:
+    CamWindow:
+    CongratsWindow:
+    
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        size_hint:1,0.05
+        Image:
+            source: '/home/tosty/Documents/HCI/logo.png'
+            allow_stretch: True
+            keep_ratio: False
+            size_hint_y: None
+            size_hint_x: None
+            width: self.parent.width
+            height: self.parent.width/self.image_ratio
+
+    BoxLayout:
+        orientation:'vertical'
+        size_hint:1,0.9
+
+        BoxLayout:
+            size_hint:1,0.2
+            Label:
+                text:'Temas Disponibles para visualización'
+                font_size:24
+                canvas.before:
+                    Color:
+                        rgba: 0.501, 0.501,0.501, 1
+                    Rectangle:
+                        pos : self.pos
+                        size: self.size
+
+        GridLayout:
+            rows : 6
+            BoxLayout:
+                size_hint : 1,0.2
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Label:
+                    text:'Saludos y Despedidas'
+                    font_size:18
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0.75, 0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+            Carousel:
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                BoxLayout:
+                    orientation : 'horizontal'
+                    Label:
+                        size_hint : 0.05,1
+                        text:'<'
+                        font_size:18
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0,0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Buenos Dias'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            size_hint : 1,0.9
+                            source: '/home/tosty/Downloads/imagenes/buenosDias1_Buenos.png'
+                            on_touch_down: 
+                                app.root.current = "second"
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Buenas Tardes'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            source: '/home/tosty/Downloads/imagenes/buenasTardes_Tardes.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Buenas Noches'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            source: '/home/tosty/Downloads/imagenes/hastaLuego_Luego.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Hasta pronto'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            source: '/home/tosty/Downloads/imagenes/Hola.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    Label:
+                        size_hint : 0.05,1
+                        text:'>'
+                        font_size:18
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0,0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                BoxLayout:
+                    orientation : 'horizontal'
+                    Label:
+                        size_hint : 0.05,1
+                        text:'<'
+                        font_size:18
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0,0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Hasta Luego'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            text : "Buenos Dias"
+                            source: '/home/tosty/Downloads/imagenes/buenosDias1_V2_Buenos.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Adios'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            source: '/home/tosty/Downloads/imagenes/Los_Saludos.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Hasta mañana'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            source: '/home/tosty/Downloads/imagenes/buenosDias1_V2_Dias.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    BoxLayout:
+                        orientation :'vertical'
+                        Label:
+                            size_hint : 1,0.1
+                            text:'Nos vemos'
+                            font_size:12
+                            multiline:True
+                            canvas.before:
+                                Color:
+                                    rgba: 0.55, 0,0, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        AsyncImage:
+                            source: '/home/tosty/Downloads/imagenes/BuenosDias2_Dias.png'
+                            on_touch_down : 
+                                app.root.current = "second"
+                    Label:
+                        size_hint : 0.05,1
+                        text:'>'
+                        font_size:18
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0,0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+        BoxLayout:
+            size_hint : 1,0.2
+            canvas.before:
+                Color:
+                    rgba: 1,1,1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text:'Relaciones de Parentesco'
+                font_size:18
+                multiline:True
+                canvas.before:
+                    Color:
+                        rgba: 0.75, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                
+        Carousel:
+            canvas.before:
+                Color:
+                    rgba: 1,1,1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                orientation : 'horizontal'
+                Label:
+                    size_hint : 0.05,1
+                    text:'<'
+                    font_size:18
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Papá'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        size_hint : 1,0.9
+                        source: '/home/tosty/Downloads/imagenes/papa.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Mamá'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        source: '/home/tosty/Downloads/imagenes/mama.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Hermano'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        source: '/home/tosty/Downloads/imagenes/hermano_part1.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Hijastro'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        source: '/home/tosty/Downloads/imagenes/hijastro_part1.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                Label:
+                    size_hint : 0.05,1
+                    text:'>'
+                    font_size:18
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+            BoxLayout:
+                orientation : 'horizontal'
+                Label:
+                    size_hint : 0.05,1
+                    text:'<'
+                    font_size:18
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Hasta Luego'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        text : "Buenos Dias"
+                        source: '/home/tosty/Downloads/imagenes/buenosDias1_V2_Buenos.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Adios'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        source: '/home/tosty/Downloads/imagenes/Los_Saludos.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Hasta mañana'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        source: '/home/tosty/Downloads/imagenes/buenosDias1_V2_Dias.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                BoxLayout:
+                    orientation :'vertical'
+                    Label:
+                        size_hint : 1,0.1
+                        text:'Nos vemos'
+                        font_size:12
+                        multiline:True
+                        canvas.before:
+                            Color:
+                                rgba: 0.55, 0,0, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                    AsyncImage:
+                        source: '/home/tosty/Downloads/imagenes/BuenosDias2_Dias.png'
+                        on_touch_down : 
+                            app.root.current = "second"
+                Label:
+                    size_hint : 0.05,1
+                    text:'>'
+                    font_size:18
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+        BoxLayout:
+            size_hint : 1,0.2
+            Label:
+                text:'Días de la semana'
+                font_size:18
+                multiline:True
+                canvas.before:
+                    Color:
+                        rgba: 0.75, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                
+        Carousel:
+            direction:'right'
+            cols:2
+            canvas.before:
+                Color:
+                    rgba: 1,1,1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            #Label: 
+            AsyncImage:
+                source: '/home/tosty/Downloads/imagenes/Los_Saludos.png'
+                on_touch_down : 
+                    app.root.current = "second"
+            AsyncImage:
+                source: 'http://placehold.it/480x270.png&text=slide-2.png'
+                on_touch_down : 
+                    app.root.current = "second"
+            AsyncImage:
+                source: 'http://placehold.it/480x270.png&text=slide-3.png'
+                on_touch_down : 
+                    app.root.current = "second"
+            AsyncImage:
+                source: 'http://placehold.it/480x270.png&text=slide-4.png'
+                on_touch_down : 
+                    app.root.current = "second"
+
+<SecondWindow>:
+    name: "second"
+    BoxLayout:
+        orientation:'vertical'
+        BoxLayout:
+            size_hint : 1,0.05
+            orientation : 'horizontal'
+
+            Button:
+                text: "Selección de tema"
+                background_color : 0.5,0,0,1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+                on_release:
+                    app.root.current = "main"
+            
+            Button:
+                text: "Práctica Asistida"
+                background_color : 0.21,0.39,1, 1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+
+            Button:
+                text: "Evaluación"
+                background_color : 0.5,0,0,1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+                on_release:
+                    app.root.current = "cam"
+
+        BoxLayout:
+            size_hint : 1,0.05
+            orientation : 'horizontal'
+            Label:
+                text:''
+                font_size:14
+                multiline:True
+                canvas.before:
+                    Color:
+                        rgba: 0.21,0.39,1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+        BoxLayout:
+            orientation : 'horizontal'
+            BoxLayout:
+                orientation : 'vertical'
+                size_hint : 0.25,1
+                Label:
+                    text: ''
+                    #size_hint : 1,0.01
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    text: ''
+                    size_hint : 1,0.01
+                    canvas.before:
+                        Color:
+                            rgba: 0,1,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                
+                VideoPlayer:
+                    size_hint : 1,0.4
+                    source : "/home/tosty/Documents/HCI/Buenosdias.avi"
+                    state : "stop"
+                    options : {"allow_stretch":"False","eos":"loop"}
+                
+                Label:
+                    text: ''
+                    size_hint : 1,0.01
+                    canvas.before:
+                        Color:
+                            rgba: 0,1,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Label:
+                    text: ''
+                    #size_hint : 1,0.45
+                    canvas.before:
+                        Color:
+                            rgba: 0, 0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+            MyCamera:
+                size: root.width * 0.25, root.height * 0.1
+                id: camera0
+
+        BoxLayout:
+            orientation : 'horizontal'
+            size_hint:1,0.05
+            Button:
+                text: "MAXIMIZAR VIDEO"
+                #size_hint : 1,0.05
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : (29/255,158/255,0,1)
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "test"
+            
+            Label:
+                text: ''
+                #size_hint : 1,0.45
+                canvas.before:
+                    Color:
+                        rgba: 0, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                text: ''
+                #size_hint : 1,0.45
+                canvas.before:
+                    Color:
+                        rgba: 0, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            
+            Button:
+                text: "ATRÁS"
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0.21,0.39,1, 1
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "main"
+
+            Button:
+                text: "EVALUACIÓN"
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0.21,0.39,1, 1
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "cam"
+
+
+<TestWindow>
+    name: "test"
+    BoxLayout:
+        orientation : 'vertical'
+        BoxLayout:
+            size_hint : 1,0.05
+            orientation : 'horizontal'
+
+            Button:
+                text: "Selección de tema"
+                background_color : 0.5,0,0,1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+                on_release:
+                    app.root.current = "main"
+            
+            Button:
+                text: "Práctica Asistida"
+                background_color : 0.21,0.39,1, 1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+
+            Button:
+                text: "Evaluación"
+                background_color : 0.5,0,0,1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+                on_release:
+                    app.root.current = "cam"
+        BoxLayout:
+            size_hint : 1,0.05
+            orientation : 'horizontal'
+            Label:
+                text:''
+                font_size:14
+                multiline:True
+                canvas.before:
+                    Color:
+                        rgba: 0.21,0.39,1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        Label:
+            text: ''
+            size_hint : 1,0.05
+            canvas.before:
+                Color:
+                    rgba: 0, 0,0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        BoxLayout:
+            orientation : 'horizontal'
+            BoxLayout:
+                orientation : 'vertical'
+                size_hint : 0.25,1
+                Label:
+                    size_hint: 1,1
+                    text:''
+                    font_size:14
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0,1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                MyCamera:
+                    id: camera1
+                
+                Label:
+                    size_hint: 1,1
+                    text:''
+                    font_size:14
+                    multiline:True
+                    canvas.before:
+                        Color:
+                            rgba: 0,0,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+            BoxLayout:
+                orientation : 'vertical'
+
+                Label:
+                    text: ''
+                    size_hint : 1,0.005
+                    canvas.before:
+                        Color:
+                            rgba: 0,1,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                VideoPlayer:
+                    size_hint : 1,0.95
+                    source : "/home/tosty/Documents/HCI/Buenosdias.avi"
+                    state : "stop"
+                    options : {"allow_stretch":"False","eos":"loop"}
+
+                Label:
+                    text: ''
+                    size_hint : 1,0.005
+                    canvas.before:
+                        Color:
+                            rgba: 0,1,0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+
+            
+        Label:
+            text: ''
+            size_hint : 1,0.05
+            canvas.before:
+                Color:
+                    rgba: 0, 0,0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        BoxLayout:
+            orientation : 'horizontal'
+            size_hint:1,0.05
+            Button:
+                text: "MINIMIZAR VIDEO"
+                #size_hint : 1,0.05
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : (29/255,158/255,0,1)
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "second"
+            
+            Label:
+                text: ''
+                #size_hint : 1,0.45
+                canvas.before:
+                    Color:
+                        rgba: 0, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                text: ''
+                #size_hint : 1,0.45
+                canvas.before:
+                    Color:
+                        rgba: 0, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Button:
+                text: "ATRÁS"
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0.21,0.39,1, 1
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "main"
+
+            Button:
+                text: "EVALUACIÓN"
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0.21,0.39,1, 1
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "cam"
+
+<CamWindow>
+    name: "cam"
+    BoxLayout:
+        orientation : 'vertical'
+        BoxLayout:
+            size_hint : 1,0.05
+            orientation : 'horizontal'
+
+            Button:
+                text: "Selección de tema"
+                background_color : 0.5,0,0,1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+                on_release:
+                    app.root.current = "main"
+            
+            Button:
+                text: "Práctica Asistida"
+                background_color : 0.5,0,0,1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+
+            Button:
+                text: "Evaluación"
+                background_color : 0.21,0.39,1, 1
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0,0.5,0, 1
+                on_release:
+                    app.root.current = "cam"
+
+        BoxLayout:
+            size_hint : 1,0.05
+            orientation : 'horizontal'
+            Label:
+                text:''
+                font_size:14
+                multiline:True
+                canvas.before:
+                    Color:
+                        rgba: 0.21,0.39,1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+        MyCamera:
+            id: camera2
+            
+        BoxLayout:
+            orientation : 'horizontal'
+            size_hint:1,0.05
+            BoxLayout:
+                size_hint : 0.70,1
+
+            Button:
+                text: "EVALUAR"
+                background_color : 0,0,0,0
+                background_normal : ''
+                canvas.before:
+                    Color:
+                        rgba : 0.21,0.39,1, 1
+                    RoundedRectangle:
+                        size : self.size
+                        pos : self.pos
+                        radius : [15]
+                on_release:
+                    app.root.current = "congrats"
+
+
+<CongratsWindow>
+    name: "congrats"
+    BoxLayout:
+        orientation : 'vertical'
+        BoxLayout:
+            size_hint : 1,0.1
+            orientation : 'horizontal'
+            Label:
+                text:'Lección completada satisfactoriamente'
+                font_size:20
+                multiline:True
+                canvas.before:
+                    Color:
+                        rgba: 0.5, 0,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        BoxLayout:
+            orientation : 'horizontal'
+            BoxLayout:
+                orientation : 'vertical'
+                size_hint : 0.5,1
+                AsyncImage:
+                    size_hint : 1,0.9
+                    source: '/home/tosty/Documents/HCI/congrats.jpeg'
+                    allow_stretch: True
+                    keep_ratio: False
+                    size_hint_y: None
+                    size_hint_x: None
+                    width: self.parent.width
+                    height: self.parent.width/self.image_ratio
+                
+            BoxLayout:
+                size_hint : 0.5,1
+                BoxLayout:
+                    orientation : 'vertical'
+                    Label:
+                        size_hint : 1 , 0.05
+                        text:'Siguiente'
+                    AsyncImage:
+                        size_hint : 1 , 0.3
+                        source: '/home/tosty/Downloads/imagenes/buenosDias1_V2_Dias.png'
+                    Label:
+                        size_hint : 1 , 0.05
+                        text:'Buenas tardes'
+                    Label:
+                        size_hint : 1 , 0.5
+                        text:''
+                    Button:
+                        size_hint : 1,0.1
+                        text: "Inicio"
+                        on_release:
+                            app.root.current = "main"
+                            #root.manager.transition.direction = "right"
